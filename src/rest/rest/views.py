@@ -22,4 +22,3 @@ class TodoListView(APIView):
         # Implement this method - accept a todo item in a mongo collection, persist it using db instance above.
         collection1.insert(request.data)            #insert request data in the collection1
         return Response(request.data, status=status.HTTP_200_OK)
-

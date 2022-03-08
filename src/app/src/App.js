@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
+import InitialList from "./Components/InitialList";
 
 import './App.css';
 import logo from './logo.svg';
 //import TodoList from "./TodoList";
 
-import Todo from './Todo'         //import Todo component
+import Todo from './Components/Todo.js'         //import Todo component
 import axios from "axios";        //import axios library
 
 
@@ -35,11 +36,8 @@ export function App() {
 	}
   return (
     <div className="App">
-      <div>
-        <h1>List of TODOs</h1>                     {/*hardcoded list of items the the task asked for*/}
-        <li>Learn Docker</li>
-        <li>Learn React</li>
-        
+      <InitialList/>
+      <div> 
         {/*iterate over the elements in todo (which contains the items array) and use react prop to send the data to Todo compnent*/}                   
         {todos.map((todo,index) =>(
           <Todo id = {index} name={todo}/>
