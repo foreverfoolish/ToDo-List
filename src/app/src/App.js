@@ -27,7 +27,7 @@ export function App() {
 
   const addTodo = async newTodo => {
 		try {
-			// POST request using fetch inside useEffect React hook
+			// POST request using fetch
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -35,8 +35,6 @@ export function App() {
     };
     fetch('http://localhost:8000/todos/', requestOptions)
         .then(response => response.json())
-
-// empty dependency array means this effect will only run once (like componentDidMount in classes)
 			getTodos()
 		} catch (err) {
 			console.log(err)
