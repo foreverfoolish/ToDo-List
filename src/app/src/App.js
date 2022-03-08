@@ -27,8 +27,16 @@ export function App() {
 
   const addTodo = async newTodo => {
 		try {
-			newTodo = ["name", title]                      //Use React hook to get the input data and store it into newTodo
-      await axios.post('http://localhost:8000/todos', newTodo)             //make a post request and post newTodo to the server
+			// POST request using fetch inside useEffect React hook
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name : title})
+    };
+    fetch('http://localhost:8000/todos/', requestOptions)
+        .then(response => response.json())
+
+// empty dependency array means this effect will only run once (like componentDidMount in classes)
 			getTodos()
 		} catch (err) {
 			console.log(err)
