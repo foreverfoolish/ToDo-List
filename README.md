@@ -27,7 +27,7 @@ This repository includes code for a Docker setup with 3 containers:
 # Setup
 1. Clone this repository
 ```
-git clone https://github.com/foreverfoolish/adb_sol_2
+git clone https://github.com/foreverfoolish/ToDo-List
 ```
 2. Change into the cloned directory and set the environment variable for the code path. Replace `path_to_repository` appropriately.
 ```
